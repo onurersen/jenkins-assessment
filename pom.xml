@@ -6,7 +6,7 @@
 
   <groupId>com.onurersen.jenkins</groupId>
   <artifactId>jenkins-assessment</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>SNAPSHOT-1.0.{v}</version>
 
   <name>jenkins-assessment</name>
   <!-- FIXME change it to the project's website -->
