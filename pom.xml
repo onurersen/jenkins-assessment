@@ -67,7 +67,7 @@
                                 <goal>install-file</goal>
                             </goals>
                             <configuration>
-                                <file>${project.build.directory}/${project.build.finalName}-${BUILD_NUMBER}.${project.packaging}</file>
+                                <file>${project.build.directory}/${project.build.finalName}.${BUILD_NUMBER}.${project.packaging}</file>
                             </configuration>
                         </execution>
                     </executions>
