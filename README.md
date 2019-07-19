@@ -64,3 +64,7 @@ ifconfig lo0 alias 123.123.123.123/24
 To share functionality across projects, Shared Libraries functionality on Jenkins was used.
 
 Another project named **jenkins-assessment-shared-lib** was created for this purpose. By implementing this project shared functionalities can be created, maintained and versioned on demand.
+
+---
+
+No sensitive information (credentials, secrets, keys etc.) were exposed in pipeline script inside Jenkinsfile. All kept on Jenkins Installation Configuration.
