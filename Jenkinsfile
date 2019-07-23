@@ -15,15 +15,15 @@ pipeline {
         		        try {
                 		        sharedEmailNotification (
                                     [
-                                        "email": "onurersen@gmail.com",
+                                        "email": "${NOTIFICATION_EMAIL}",
                                         "status":  "STARTED"
                                     ]
                                 )
                     		    sharedCloneRepository (
                                     [
-                                        "branch": "development",
+                                        "branch": "${GIT_CLONE_REPO_BRANCH}",
                                         "credentials":  "Github-Credential",
-                                        "url": "https://github.com/onurersen/jenkins-assessment.git"
+                                        "url": "${GIT_CLONE_REPO_URL}"
                                     ]
                                 )
         		        } catch (e) {
@@ -119,9 +119,9 @@ pipeline {
         		        try {
                            sharedPublishArtifacts (
                                 [
-                                    "nexusUrl": "docker.for.mac.host.internal:8081",
-                                    "groupId":  "com.onurersen.jenkins",
-                                    "repository": "jenkins-repo",
+                                    "nexusUrl": "${NEXUS_URL}",
+                                    "groupId":  "${ARTIFACT_GROUP_ID}",
+                                    "repository": "${ARTIFACT_REPOSITORY_NAME}",
                                     "credentials": "Nexus-Credential",
                                     
                                 ]
@@ -143,7 +143,7 @@ pipeline {
             echo 'Job succeeeded!'
             sharedEmailNotification (
                     [
-                        "email": "onurersen@gmail.com",
+                        "email": "${NOTIFICATION_EMAIL}",
                         "status":  "SUCCESS"
                     ]
                 )
@@ -152,7 +152,7 @@ pipeline {
             echo 'Project is unstable.'
             sharedEmailNotification (
                     [
-                        "email": "onurersen@gmail.com",
+                        "email": "${NOTIFICATION_EMAIL}",
                         "status":  "UNSTABLE"
                     ]
                 )
@@ -161,7 +161,7 @@ pipeline {
             echo 'Pipeline failed.'
             sharedEmailNotification (
                     [
-                        "email": "onurersen@gmail.com",
+                        "email": "${NOTIFICATION_EMAIL}",
                         "status":  "FAILED"
                     ]
                 )
